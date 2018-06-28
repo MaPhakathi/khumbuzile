@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      Coffe Application
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+     
+        <ion-item >
+          <ion-input text-center type="text" placeholder="Name"></ion-input>
+        </ion-item>
+       <h1 text-center>TOPPINGS</h1>
+       <ion-item center>
+          <ion-label>Whipped Cream</ion-label>
+          <ion-checkbox ></ion-checkbox>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Chocolate</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <h1 text-center>QUANTITY</h1>
+        <button id="plus" ion-button color="light" (click)= "onPlus()">+</button>
+        
+        <button id="minus" ion-button color="light" (click)= "onMinus()">-</button>
+        <h1 text-center>Order Summary</h1>
+          
+        <button id="order" ion-button color="light" (click)= "onOrder()">Order</button>
+        <br>
+        <br>
+        <div id="coco"> 
+        <button id="reset" ion-button color="light" (click)= "onReset()">Reset</button>
+        <button id="email" ion-button color="light" (click)= "onEmail()">Email Order</button>
+         </div>
+  
+</ion-content>
