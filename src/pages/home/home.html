@@ -8,25 +8,55 @@
 
 <ion-content padding>
   
-     
-        <ion-item >
-          <ion-input text-center type="text" placeholder="Name"></ion-input>
-        </ion-item>
-       <h1 text-center>TOPPINGS</h1>
-       <ion-item center>
-          <ion-label>Whipped Cream</ion-label>
-          <ion-checkbox ></ion-checkbox>
-        </ion-item>
+  <ion-list>
+    <ion-item >
+      <ion-input text-center type="text" placeholder="Name" [(ngModel)]= "name"></ion-input>
+    </ion-item>
+   <h1 text-center>TOPPINGS</h1>
+   <div id="check">
+     <ion-item >
+      <ion-label  >Whipped Cream</ion-label>
+      
+      <ion-checkbox (click)="onWhip()" [(ngModel)]="whip"></ion-checkbox>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Chocolate</ion-label>
+      <ion-checkbox (click)="onChoc()" [(ngModel)]="choc"></ion-checkbox>
+    </ion-item>
+   </div>
+    
+   </ion-list>
         
-        <ion-item>
-          <ion-label>Chocolate</ion-label>
-          <ion-checkbox></ion-checkbox>
-        </ion-item>
         <h1 text-center>QUANTITY</h1>
-        <button id="plus" ion-button color="light" (click)= "onPlus()">+</button>
+        <div id="rmp">
+          <button ion-button color="light" (click)= "onPlus()">+</button>
+          {{results}}
+          <button ion-button color="light" (click)= "onMinus()">-</button>
+    </div>
+
+    <h1 text-center>Order Summary</h1>
+    <div *ngIf ="value == 1" id="summary">
+      Name:{{name}}<br>
+      {{wc}}<br>
+      {{ch}}<br>
+      Quantity: {{results}}<br>
+      Price: {{price}}<br>
+      Thank You!
+    </div>
+     
+    <button id="order" ion-button color="light" (click)= "onOrder()">Order</button>
+    <br>
+    <br>
+     
+    <div class="bottom-row">
+      <button id="reset" ion-button color="light" (click)= "onReset()">Reset</button>
+    </div>
+     
+        <!-- <button id="plus" ion-button color="light" (click)= "onPlus()">+</button>
         
         <button id="minus" ion-button color="light" (click)= "onMinus()">-</button>
-        <h1 text-center>Order Summary</h1>
+        
           
         <button id="order" ion-button color="light" (click)= "onOrder()">Order</button>
         <br>
@@ -34,6 +64,6 @@
         <div id="coco"> 
         <button id="reset" ion-button color="light" (click)= "onReset()">Reset</button>
         <button id="email" ion-button color="light" (click)= "onEmail()">Email Order</button>
-         </div>
+         </div> -->
   
 </ion-content>
